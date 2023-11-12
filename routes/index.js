@@ -13,6 +13,5 @@ route.get('/', (req, res) => {
 route.use('/auth', authRoute);
 route.use('/user', userRoute);
 route.use('/todos', todoRoute);
-// route.use("/user", userRoute)
 
 module.exports = route;
