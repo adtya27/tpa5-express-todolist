@@ -1,6 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-const DB_URL = 'mongodb+srv://adtynff:adit123@adtynf.ginwb0w.mongodb.net/todo_app';
+const DB_URL = process.env.DB_URL;
 
 const db = mongoose.connect(DB_URL);
 
