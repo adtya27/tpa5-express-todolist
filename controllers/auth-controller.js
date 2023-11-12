@@ -23,5 +23,11 @@ module.exports = {
     }
   },
 
-  regis: (req, res) => {},
+  regis: async (req, res) => {
+    let data = req.body;
+    await User.create(data);
+    res.json({
+      message: 'registarasi berhasil ',
+    });
+  },
 };
