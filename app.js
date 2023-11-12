@@ -1,10 +1,11 @@
 const express = require('express');
-const app = express();
-
-const PORT = process.env.PORT || 3000;
+const express = require('cors');
 
 const db = require('./config/db');
 const allRoutes = require('./routes');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 db.then(() => {
   console.log('Berhasil konek ke MonggoDB');
@@ -12,6 +13,7 @@ db.then(() => {
   console.log('gagal konek ke MonggoDB');
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(allRoutes);
 
